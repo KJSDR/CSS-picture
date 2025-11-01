@@ -102,7 +102,6 @@ body {
     );
 }
 
-/* Brushstroke texture overlay for impressionist effect */
 .brushstrokes {
     position: absolute;
     top: 0;

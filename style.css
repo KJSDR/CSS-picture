@@ -65,7 +65,6 @@ body {
     z-index: 1;
 }
 
-/* The famous orange sun - burning coal effect */
 .sun {
     position: absolute;
     top: 52%;

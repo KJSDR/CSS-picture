@@ -157,26 +157,21 @@ body {
         100% 28%,
         100% 100%,
         
-        /* Go to arch opening - right side */
         85% 100%,
         85% 70%,
         
-        /* Arch top curve - right to left */
         83% 55%,
         80% 50%,
         77% 55%,
         
-        /* Arch opening - left side */
         75% 70%,
         75% 100%,
         
-        /* Close the polygon */
         0% 100%
     );
     z-index: 5;
 }
 
-/* Additional cliff details */
 .cliff-shadow {
     position: absolute;
     bottom: 0;
@@ -192,7 +187,6 @@ body {
     z-index: 4;
 }
 
-/* Gentle wave patterns */
 .wave-pattern {
     position: absolute;
     bottom: 10%;
@@ -219,7 +213,6 @@ body {
     50% { opacity: 0.3; transform: scaleX(1.1); }
 }
 
-/* Beach area */
 .beach {
     position: absolute;
     bottom: 0;
@@ -236,7 +229,6 @@ body {
     z-index: 2;
 }
 
-/* Atmospheric haze */
 .atmospheric-haze {
     position: absolute;
     top: 45%;

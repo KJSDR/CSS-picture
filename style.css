@@ -127,7 +127,6 @@ body {
     pointer-events: none;
 }
 
-/* Main cliff - Falaise d'Aval with proper arch opening */
 .main-cliff {
     position: absolute;
     bottom: 30%;

@@ -3,10 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Étretat Sunset by Claude Monet</title>
+    <title>Étretat Sunset by Claude Monet - Parameterized</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Simple Theme Switcher */
+        .theme-controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+        
+        .theme-button {
+            padding: 12px 24px;
+            font-family: 'Times New Roman', serif;
+            font-size: 14px;
+            font-weight: bold;
+            border: 2px solid #d4af37;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        
+        .theme-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .theme-button.sunset {
+            background: linear-gradient(135deg, #ff6600, #8a3bc8);
+            color: white;
+        }
+        
+        .theme-button.midnight {
+            background: linear-gradient(135deg, #0a1628, #16235c);
+            color: #f0f4f8;
+        }
+        
+        .theme-button.dawn {
+            background: linear-gradient(135deg, #b8d4f5, #f8a8b8);
+            color: #2a1a0a;
+        }
+        
+        .theme-button.active {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
+    <!-- Theme Switcher Buttons -->
+    <div class="theme-controls">
+        <button class="theme-button sunset active" onclick="setTheme('sunset')">
+            🌅 Sunset
+        </button>
+        <button class="theme-button midnight" onclick="setTheme('midnight')">
+            🌙 Midnight
+        </button>
+        <button class="theme-button dawn" onclick="setTheme('dawn')">
+            🌄 Dawn
+        </button>
+    </div>
+    
+    <!-- YOUR ORIGINAL PAINTING - Exactly as you had it -->
     <div class="painting-container">
         
         <div class="sky"></div>
@@ -20,5 +83,27 @@
         <div class="brushstrokes"></div>
         
     </div>
+    
+    <script>
+        function setTheme(theme) {
+            const body = document.body;
+            
+            // Remove all theme classes
+            body.classList.remove('midnight-theme', 'dawn-theme');
+            
+            // Add selected theme class
+            if (theme === 'midnight') {
+                body.classList.add('midnight-theme');
+            } else if (theme === 'dawn') {
+                body.classList.add('dawn-theme');
+            }
+            
+            // Update active button
+            document.querySelectorAll('.theme-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+    </script>
 </body>
 </html>
